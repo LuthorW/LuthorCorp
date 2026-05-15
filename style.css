@@ -10,7 +10,7 @@
     --text: #f1f1f1;
     --muted: #888;
     --transition: 0.3s ease;
-    --shadow-color: rgba(0, 230, 118, 0.1);
+    --shadow-color: rgba(138, 0, 230, 0.1);
 }
 
 @keyframes fadeIn {
@@ -236,7 +236,7 @@ h2::after {
 }
 
 .project-card:hover {
-    background-color: #c8b6ff;
+    background-color: #db96fc;
     color: #141414;
     transform: translateY(-5px);
 }

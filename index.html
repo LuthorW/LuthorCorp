@@ -1,137 +1,185 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Luthor Corporation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/png" href="favicon.ico">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luthor Corporation — tecnologia, pesquisa e projetos estratégicos.">
+  <meta name="theme-color" content="#07050b">
+  <title>Luthor Corporation</title>
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="brand">
-            <img src="imgs/lexcorp.png" alt="Luthor Logo">
-            <h1>Luthor Corporation</h1>
-        </div>
-        <nav>
-            <a href="#about">Sobre</a>
-            <a href="#services">Soluções</a>
-            <a href="#projects">Projetos</a>
-            <a href="#team">Equipe</a>
-            <a href="#contact">Contato</a>
-        </nav>
-    </header>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<canvas id="cinematic-canvas" aria-hidden="true"></canvas>
+<header>
+  <a class="brand" href="index.html#hero" aria-label="Início da Luthor Corporation">
+    <img src="imgs/lexcorp.png" alt="Luthor Corporation Logo">
+    <h1>Luthor Corporation</h1>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="header-actions">
+    <nav aria-label="Navegação principal">
+      <a href="#about" data-lang-pt="Sobre" data-lang-en="About" data-lang-it="Chi siamo">Sobre</a>
+      <a href="#services" data-lang-pt="Soluções" data-lang-en="Solutions" data-lang-it="Soluzioni">Soluções</a>
+      <a href="#projects" data-lang-pt="Projetos" data-lang-en="Projects" data-lang-it="Progetti">Projetos</a>
+      <a href="#team" data-lang-pt="Equipe" data-lang-en="Team" data-lang-it="Team">Equipe</a>
+      <a href="#partners" data-lang-pt="Parceiros" data-lang-en="Partners" data-lang-it="Partner">Parceiros</a>
+      <a href="#contact" data-lang-pt="Contato" data-lang-en="Contact" data-lang-it="Contatto">Contato</a>
+    </nav>
+    <div class="lang-switch" aria-label="Selecionar idioma">
+      <button type="button" data-lang="pt">PT</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="it">IT</button>
+    </div>
+  </div>
+</header>
+<main id="main-content" class="container">
+  <section id="hero" class="hero">
+    <div class="hero-content reveal-on-scroll">
+      <span class="eyebrow">Luthor Corporation</span>
+      <h2 data-lang-pt="Moldando o Amanhã, Hoje." data-lang-en="Shaping Tomorrow, Today." data-lang-it="Plasmare il Domani, Oggi.">Moldando o Amanhã, Hoje.</h2>
+      <p data-lang-pt="Inovação, poder e precisão. Bem-vindo ao futuro, bem-vindo à LuthorCorp." data-lang-en="Innovation, power and precision. Welcome to the future, welcome to LuthorCorp." data-lang-it="Innovazione, potere e precisione. Benvenuto nel futuro, benvenuto in LuthorCorp.">Inovação, poder e precisão. Bem-vindo ao futuro, bem-vindo à LuthorCorp.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#projects" data-lang-pt="Ver projetos" data-lang-en="View projects" data-lang-it="Vedi progetti">Ver projetos</a>
+        <a class="btn btn-secondary" href="#contact" data-lang-pt="Contato" data-lang-en="Contact" data-lang-it="Contatto">Contato</a>
+      </div>
+    </div>
+  </section>
 
-    <main class="container">
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <h2>Moldando o Amanhã, Hoje.</h2>
-                <p>Inovação, poder e precisão. Bem-vindo ao futuro, bem-vindo à LuthorCorp.</p>
-            </div>
-        </section>
+  <section id="about" class="about reveal-on-scroll">
+    <h2 data-lang-pt="Sobre Nós" data-lang-en="About Us" data-lang-it="Chi Siamo">Sobre Nós</h2>
+    <p data-lang-pt="A Luthor Corporation desenvolve tecnologias de alto impacto para mercados que exigem escala, sigilo e precisão." data-lang-en="Luthor Corporation develops high-impact technologies for markets that demand scale, secrecy and precision." data-lang-it="Luthor Corporation sviluppa tecnologie ad alto impatto per mercati che richiedono scala, riservatezza e precisione.">A Luthor Corporation desenvolve tecnologias de alto impacto para mercados que exigem escala, sigilo e precisão.</p>
+  </section>
 
-        <section id="about" class="about reveal-on-scroll">
-            <h2>Sobre Nós</h2>
-            <p>
-                A Luthor Corporation é líder global em soluções tecnológicas inovadoras, dedicada a moldar o 
-                futuro através da excelência, integridade e visão. Nossa equipe está comprometida em fornecer produtos 
-                e serviços de classe mundial que capacitam empresas e comunidades em todo o mundo.
-            </p>
-        </section>
-        
-        <section id="services" class="services reveal-on-scroll">
-            <h2>Nossas Soluções</h2>
-            <div class="service-cards">
-                <div class="card">
-                    <i class="fas fa-flask"></i>
-                    <h3>Pesquisa e Desenvolvimento</h3>
-                    <p>Exploramos as fronteiras da ciência para criar as tecnologias que definirão a próxima geração.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Software Empresarial</h3>
-                    <p>Soluções de software robustas e escaláveis, projetadas para máxima eficiência e performance.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Segurança Cibernética</h3>
-                    <p>Proteção de dados de nível militar para defender seus ativos contra as ameaças mais avançadas.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Consultoria Estratégica</h3>
-                    <p>Nossa visão e expertise guiando sua empresa em direção ao crescimento e domínio de mercado.</p>
-                </div>
-            </section>
+  <section id="services" class="services reveal-on-scroll">
+    <h2 data-lang-pt="Nossas Soluções" data-lang-en="Our Solutions" data-lang-it="Le Nostre Soluzioni">Nossas Soluções</h2>
+    <div class="service-cards">
+      <article class="card"><i class="fas fa-flask" aria-hidden="true"></i><h3 data-lang-pt="Pesquisa e Desenvolvimento" data-lang-en="Research & Development" data-lang-it="Ricerca e Sviluppo">Pesquisa e Desenvolvimento</h3><p data-lang-pt="Exploramos as fronteiras da ciência para criar tecnologias de próxima geração." data-lang-en="We explore the frontiers of science to create next-generation technologies." data-lang-it="Esploriamo le frontiere della scienza per creare tecnologie di nuova generazione.">Exploramos as fronteiras da ciência para criar tecnologias de próxima geração.</p></article>
+      <article class="card"><i class="fas fa-cogs" aria-hidden="true"></i><h3 data-lang-pt="Software Empresarial" data-lang-en="Enterprise Software" data-lang-it="Software Aziendale">Software Empresarial</h3><p data-lang-pt="Soluções robustas, escaláveis e projetadas para máxima eficiência." data-lang-en="Robust, scalable solutions designed for maximum efficiency." data-lang-it="Soluzioni robuste, scalabili e progettate per la massima efficienza.">Soluções robustas, escaláveis e projetadas para máxima eficiência.</p></article>
+      <article class="card"><i class="fas fa-shield-alt" aria-hidden="true"></i><h3 data-lang-pt="Segurança Cibernética" data-lang-en="Cybersecurity" data-lang-it="Cybersecurity">Segurança Cibernética</h3><p data-lang-pt="Proteção avançada para dados, infraestrutura e ativos estratégicos." data-lang-en="Advanced protection for data, infrastructure and strategic assets." data-lang-it="Protezione avanzata per dati, infrastrutture e asset strategici.">Proteção avançada para dados, infraestrutura e ativos estratégicos.</p></article>
+      <article class="card"><i class="fas fa-chart-line" aria-hidden="true"></i><h3 data-lang-pt="Consultoria Estratégica" data-lang-en="Strategic Consulting" data-lang-it="Consulenza Strategica">Consultoria Estratégica</h3><p data-lang-pt="Visão e expertise para crescimento, inovação e vantagem competitiva." data-lang-en="Vision and expertise for growth, innovation and competitive advantage." data-lang-it="Visione e competenza per crescita, innovazione e vantaggio competitivo.">Visão e expertise para crescimento, inovação e vantagem competitiva.</p></article>
+    </div>
+  </section>
 
-            <section id="projects" class="projects reveal-on-scroll">
-                <h2>Projetos de Destaque</h2>
-                <div class="project-grid">
-        
-                    <div class="project-card">
-                        <h3>Projeto Artemis</h3>
-                        <p class="project-description">Sistema de monitoramento orbital em tempo real via satélites de baixa órbita.</p>
-                    </div>
+  <section id="projects" class="projects reveal-on-scroll">
+    <div class="section-title-row">
+      <div>
+        <span class="eyebrow" data-lang-pt="Portfólio estratégico" data-lang-en="Strategic portfolio" data-lang-it="Portafoglio strategico">Portfólio estratégico</span>
+        <h2 data-lang-pt="Projetos de Destaque" data-lang-en="Featured Projects" data-lang-it="Progetti in Evidenza">Projetos de Destaque</h2>
+      </div>
+      <p data-lang-pt="Iniciativas selecionadas da LuthorCorp, agora com páginas próprias e apresentação mais cinematográfica." data-lang-en="Selected LuthorCorp initiatives, now with dedicated pages and a more cinematic presentation." data-lang-it="Iniziative selezionate di LuthorCorp, ora con pagine dedicate e una presentazione più cinematografica.">Iniciativas selecionadas da LuthorCorp, agora com páginas próprias e apresentação mais cinematográfica.</p>
+    </div>
+    <div class="project-grid">
+        <a class="project-card" href="projects/artemis.html" data-project="artemis">
+          <span class="project-number">01</span>
+          <i class="fa-solid fa-satellite" aria-hidden="true"></i>
+          <span class="project-area" data-lang-pt="Aeroespacial" data-lang-en="Aerospace" data-lang-it="Aerospazio">Aeroespacial</span>
+          <h3 data-lang-pt="Projeto Artemis" data-lang-en="Project Artemis" data-lang-it="Progetto Artemis">Projeto Artemis</h3>
+          <p class="project-description" data-lang-pt="Monitoramento orbital, sensoriamento remoto e inteligência geoespacial para operações críticas." data-lang-en="Orbital monitoring, remote sensing and geospatial intelligence for critical operations." data-lang-it="Monitoraggio orbitale, telerilevamento e intelligence geospaziale per operazioni critiche.">Monitoramento orbital, sensoriamento remoto e inteligência geoespacial para operações críticas.</p>
+          <div class="project-footer">
+            <span data-lang-pt="Operacional" data-lang-en="Operational" data-lang-it="Operativo">Operacional</span>
+            <span class="project-link" data-lang-pt="Abrir" data-lang-en="Open" data-lang-it="Apri">Abrir</span>
+          </div>
+        </a>
 
-                    <div class="project-card">
-                        <h3>Projeto Atena</h3>
-                        <p class="project-description">Plataforma de cibersegurança com inteligência artificial defensiva para infraestruturas críticas.</p>
-                    </div>
+        <a class="project-card" href="projects/athena.html" data-project="athena">
+          <span class="project-number">02</span>
+          <i class="fa-solid fa-brain" aria-hidden="true"></i>
+          <span class="project-area" data-lang-pt="Inteligência" data-lang-en="Intelligence" data-lang-it="Intelligence">Inteligência</span>
+          <h3 data-lang-pt="Projeto Athena" data-lang-en="Project Athena" data-lang-it="Progetto Athena">Projeto Athena</h3>
+          <p class="project-description" data-lang-pt="Sistema proprietário de IA para análise estratégica, ciberdefesa e previsão de risco corporativo." data-lang-en="Proprietary AI system for strategic analysis, cyberdefense and corporate risk prediction." data-lang-it="Sistema proprietario di IA per analisi strategica, cyberdifesa e previsione del rischio aziendale.">Sistema proprietário de IA para análise estratégica, ciberdefesa e previsão de risco corporativo.</p>
+          <div class="project-footer">
+            <span data-lang-pt="Prioritário" data-lang-en="Priority" data-lang-it="Prioritario">Prioritário</span>
+            <span class="project-link" data-lang-pt="Abrir" data-lang-en="Open" data-lang-it="Apri">Abrir</span>
+          </div>
+        </a>
 
-                    <div class="project-card">
-                        <h3>Projeto Prometeus</h3>
-                        <p class="project-description">Soluções inovadoras para a geração e armazenamento de energia limpa em larga escala.</p>
-                    </div>
+        <a class="project-card" href="projects/hera.html" data-project="hera">
+          <span class="project-number">03</span>
+          <i class="fa-solid fa-building-shield" aria-hidden="true"></i>
+          <span class="project-area" data-lang-pt="Infraestrutura" data-lang-en="Infrastructure" data-lang-it="Infrastrutture">Infraestrutura</span>
+          <h3 data-lang-pt="Projeto Hera" data-lang-en="Project Hera" data-lang-it="Progetto Hera">Projeto Hera</h3>
+          <p class="project-description" data-lang-pt="Arquitetura de proteção e automação para sedes, laboratórios, arenas e instalações estratégicas." data-lang-en="Protection and automation architecture for headquarters, laboratories, arenas and strategic facilities." data-lang-it="Architettura di protezione e automazione per sedi, laboratori, arene e strutture strategiche.">Arquitetura de proteção e automação para sedes, laboratórios, arenas e instalações estratégicas.</p>
+          <div class="project-footer">
+            <span data-lang-pt="Em expansão" data-lang-en="Expanding" data-lang-it="In espansione">Em expansão</span>
+            <span class="project-link" data-lang-pt="Abrir" data-lang-en="Open" data-lang-it="Apri">Abrir</span>
+          </div>
+        </a>
 
-                </div>
-            </section>
+        <a class="project-card" href="projects/demeter.html" data-project="demeter">
+          <span class="project-number">04</span>
+          <i class="fa-solid fa-dna" aria-hidden="true"></i>
+          <span class="project-area" data-lang-pt="Bioengenharia" data-lang-en="Bioengineering" data-lang-it="Bioingegneria">Bioengenharia</span>
+          <h3 data-lang-pt="Projeto Demeter" data-lang-en="Project Demeter" data-lang-it="Progetto Demeter">Projeto Demeter</h3>
+          <p class="project-description" data-lang-pt="Pesquisa em biomateriais, recuperação avançada e soluções de saúde de alta performance." data-lang-en="Research in biomaterials, advanced recovery and high-performance health solutions." data-lang-it="Ricerca su biomateriali, recupero avanzato e soluzioni sanitarie ad alte prestazioni.">Pesquisa em biomateriais, recuperação avançada e soluções de saúde de alta performance.</p>
+          <div class="project-footer">
+            <span data-lang-pt="Laboratório" data-lang-en="Laboratory" data-lang-it="Laboratorio">Laboratório</span>
+            <span class="project-link" data-lang-pt="Abrir" data-lang-en="Open" data-lang-it="Apri">Abrir</span>
+          </div>
+        </a>
 
-            <section id="team" class="team reveal-on-scroll"></section>
-                <h2>Equipe Executiva</h2>
-                <div class="team-grid">
-                <div class="team-member">
-                    <img src="imgs/leticia.jpeg" alt="Letícia Luthor">
-                    <h3>Letícia Luthor</h3>
-                    <p>Chief Executive Officer - CEO</p>
-                </div>
-                <div class="team-member">
-                    <img src="imgs/sam.jpg" alt="Samantha Arias">
-                    <h3>Samantha Arias</h3>
-                    <p>Chief Financial Officer - CFO</p>
-                </div>
-                <div class="team-member">
-                    <img src="imgs/brainy.jpg" alt="Querl Dox">
-                    <h3>Querl Dox</h3>
-                    <p>Chief Technology Officer - CTO</p>
-                </div>
-            </div>
-        </section>
+        <a class="project-card" href="projects/nike.html" data-project="nike">
+          <span class="project-number">05</span>
+          <i class="fa-solid fa-robot" aria-hidden="true"></i>
+          <span class="project-area" data-lang-pt="Robótica" data-lang-en="Robotics" data-lang-it="Robotica">Robótica</span>
+          <h3 data-lang-pt="Projeto Nike" data-lang-en="Project Nike" data-lang-it="Progetto Nike">Projeto Nike</h3>
+          <p class="project-description" data-lang-pt="Robótica de apoio, exotrajes e equipamentos para operações de resposta rápida e alto risco." data-lang-en="Support robotics, exosuits and equipment for rapid-response, high-risk operations." data-lang-it="Robotica di supporto, esoscheletri e attrezzature per operazioni ad alto rischio e risposta rapida.">Robótica de apoio, exotrajes e equipamentos para operações de resposta rápida e alto risco.</p>
+          <div class="project-footer">
+            <span data-lang-pt="Protótipo" data-lang-en="Prototype" data-lang-it="Prototipo">Protótipo</span>
+            <span class="project-link" data-lang-pt="Abrir" data-lang-en="Open" data-lang-it="Apri">Abrir</span>
+          </div>
+        </a>
 
-        <section id="partners" class="partners reveal-on-scroll">
-            <h2>Parceiros Globais</h2>
-            <div class="partner-logos">
-                <img src="imgs/milan.png" width="55" alt="AC Milan Logo" title="AC Milan">
-                <img src="imgs/barcelona.png" width="75" alt="FC Barcelona Logo" title="FC Barcelona">
-            </div>
-        </section>
-        
-        <section id="contact" class="contact reveal-on-scroll">
-            <h2>Contato</h2>
-            <p>
-                <strong>Email:</strong> <a href="mailto:info@luthorcorp.com">info@luthorcorp.com</a><br>
-                <strong>Telefone:</strong> +1 (310) 555-2711<br>
-                <strong>Sede:</strong> 1200 West Cordova Street, National City
-            </p>
-        </section>
-    </main>
-    
-    <footer>
-        &copy; 2034 Luthor Corporation. Todos os direitos reservados.
-    </footer>
+        <a class="project-card" href="projects/hecate.html" data-project="hecate">
+          <span class="project-number">06</span>
+          <i class="fa-solid fa-atom" aria-hidden="true"></i>
+          <span class="project-area" data-lang-pt="Pesquisa avançada" data-lang-en="Advanced research" data-lang-it="Ricerca avanzata">Pesquisa avançada</span>
+          <h3 data-lang-pt="Projeto Hecate" data-lang-en="Project Hecate" data-lang-it="Progetto Hecate">Projeto Hecate</h3>
+          <p class="project-description" data-lang-pt="Materiais experimentais, comunicação segura e tecnologias reservadas de próxima geração." data-lang-en="Experimental materials, secure communications and restricted next-generation technologies." data-lang-it="Materiali sperimentali, comunicazioni sicure e tecnologie riservate di prossima generazione.">Materiais experimentais, comunicação segura e tecnologias reservadas de próxima geração.</p>
+          <div class="project-footer">
+            <span data-lang-pt="Classificado" data-lang-en="Classified" data-lang-it="Classificato">Classificado</span>
+            <span class="project-link" data-lang-pt="Abrir" data-lang-en="Open" data-lang-it="Apri">Abrir</span>
+          </div>
+        </a>
+    </div>
+  </section>
 
-    <script src="script.js" defer></script>
+  <section id="team" class="team reveal-on-scroll">
+    <h2 data-lang-pt="Equipe Executiva" data-lang-en="Executive Team" data-lang-it="Team Esecutivo">Equipe Executiva</h2>
+    <div class="team-grid">
+      <article class="team-member"><img src="imgs/leticia.jpeg" alt="Letícia Luthor"><h3>Letícia Luthor</h3><p>Chief Executive Officer - CEO</p></article>
+      <article class="team-member"><img src="imgs/sam.jpg" alt="Samantha Arias"><h3>Samantha Arias</h3><p>Chief Financial Officer - CFO</p></article>
+      <article class="team-member"><img src="imgs/brainy.jpg" alt="Querl Dox"><h3>Querl Dox</h3><p>Chief Technology Officer - CTO</p></article>
+    </div>
+  </section>
+
+  <section id="partners" class="partners reveal-on-scroll">
+    <h2 data-lang-pt="Parceiros Globais" data-lang-en="Global Partners" data-lang-it="Partner Globali">Parceiros Globais</h2>
+    <div class="partner-logos">
+      <img src="imgs/milan.png" width="55" alt="AC Milan Logo" title="AC Milan">
+      <img src="imgs/barcelona.png" width="75" alt="FC Barcelona Logo" title="FC Barcelona">
+    </div>
+  </section>
+
+  <section id="contact" class="contact reveal-on-scroll">
+    <h2 data-lang-pt="Contato" data-lang-en="Contact" data-lang-it="Contatto">Contato</h2>
+    <p>
+      <strong>Email:</strong> <a href="mailto:info@luthorcorp.com">info@luthorcorp.com</a><br>
+      <strong data-lang-pt="Telefone:" data-lang-en="Phone:" data-lang-it="Telefono:">Telefone:</strong> +1 (310) 555-2711<br>
+      <strong data-lang-pt="Sede:" data-lang-en="Headquarters:" data-lang-it="Sede:">Sede:</strong> 1200 West Cordova Street, National City
+    </p>
+  </section>
+</main>
+<footer>
+  &copy; 2034 Luthor Corporation. <span data-lang-pt="Todos os direitos reservados." data-lang-en="All rights reserved." data-lang-it="Tutti i diritti riservati.">Todos os direitos reservados.</span>
+</footer>
+<script src="script.js" defer></script>
 </body>
 </html>

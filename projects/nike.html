@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dossiê de projeto da Luthor Corporation.">
+  <meta name="theme-color" content="#07050b">
+  <title>Projeto | Luthor Corporation</title>
+  <link rel="icon" type="image/png" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-project-page="nike">
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<canvas id="cinematic-canvas" aria-hidden="true"></canvas>
+<header>
+  <a class="brand" href="../index.html" aria-label="Início da Luthor Corporation">
+    <img src="../imgs/lexcorp.png" alt="Luthor Corporation Logo">
+    <h1>Luthor Corporation</h1>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="header-actions">
+    <nav aria-label="Navegação principal">
+      <a href="../index.html#about" data-lang-pt="Sobre" data-lang-en="About" data-lang-it="Chi siamo">Sobre</a>
+      <a href="../index.html#services" data-lang-pt="Soluções" data-lang-en="Solutions" data-lang-it="Soluzioni">Soluções</a>
+      <a href="../index.html#projects" data-lang-pt="Projetos" data-lang-en="Projects" data-lang-it="Progetti">Projetos</a>
+      <a href="../index.html#team" data-lang-pt="Equipe" data-lang-en="Team" data-lang-it="Team">Equipe</a>
+      <a href="../index.html#partners" data-lang-pt="Parceiros" data-lang-en="Partners" data-lang-it="Partner">Parceiros</a>
+      <a href="../index.html#contact" data-lang-pt="Contato" data-lang-en="Contact" data-lang-it="Contatto">Contato</a>
+    </nav>
+    <div class="lang-switch" aria-label="Selecionar idioma">
+      <button type="button" data-lang="pt">PT</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="it">IT</button>
+    </div>
+  </div>
+</header>
+<main id="main-content" class="container project-page">
+  <section class="project-hero reveal-on-scroll">
+    <span class="eyebrow" id="project-area">Projeto</span>
+    <i id="project-icon" class="fa-solid fa-atom" aria-hidden="true" style="font-size:2.4rem;color:#dfc5ff;margin-bottom:16px;"></i>
+    <h2 id="project-title">Projeto</h2>
+    <p id="project-description">Descrição do projeto.</p>
+    <div id="project-metrics" class="metrics-grid"></div>
+    <div class="project-nav">
+      <a class="btn" href="../index.html#projects" data-lang-pt="Voltar aos projetos" data-lang-en="Back to projects" data-lang-it="Torna ai progetti">Voltar aos projetos</a>
+      <a class="btn btn-secondary" href="../index.html#contact" data-lang-pt="Contato institucional" data-lang-en="Institutional contact" data-lang-it="Contatto istituzionale">Contato institucional</a>
+      <span class="btn btn-secondary" id="project-status">Status</span>
+    </div>
+  </section>
+
+  <section class="reveal-on-scroll">
+    <div class="section-title-row">
+      <div>
+        <span class="eyebrow" data-lang-pt="Dossiê" data-lang-en="Dossier" data-lang-it="Dossier">Dossiê</span>
+        <h2 data-lang-pt="Camadas do Projeto" data-lang-en="Project Layers" data-lang-it="Livelli del Progetto">Camadas do Projeto</h2>
+      </div>
+      <p data-lang-pt="Uma visão enxuta do propósito, aplicação e valor estratégico desta iniciativa." data-lang-en="A concise view of this initiative’s purpose, application and strategic value." data-lang-it="Una visione concisa dello scopo, dell’applicazione e del valore strategico di questa iniziativa.">Uma visão enxuta do propósito, aplicação e valor estratégico desta iniciativa.</p>
+    </div>
+    <div id="project-details" class="project-detail-grid"></div>
+  </section>
+</main>
+<footer>
+  &copy; 2034 Luthor Corporation. <span data-lang-pt="Todos os direitos reservados." data-lang-en="All rights reserved." data-lang-it="Tutti i diritti riservati.">Todos os direitos reservados.</span>
+</footer>
+<script src="../script.js" defer></script>
+</body>
+</html>

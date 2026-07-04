@@ -260,189 +260,62 @@ const renderProjectPage = (lang = getLang()) => {
 const setupCanvas = () => {
   const canvas = document.querySelector('#cinematic-canvas');
   if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
   const ctx = canvas.getContext('2d');
   let width = 0;
   let height = 0;
-  let animationFrame = 0;
-  const pointer = { x: 0.5, y: 0.5 };
-  const stars = [];
-  const nodes = [];
-  const orbs = [];
-
-  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-
+  const particles = [];
+  const total = 46;
   const resize = () => {
     width = window.innerWidth;
     height = window.innerHeight;
-    const ratio = window.devicePixelRatio || 1;
-    canvas.width = width * ratio;
-    canvas.height = height * ratio;
+    canvas.width = width * devicePixelRatio;
+    canvas.height = height * devicePixelRatio;
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
   };
-
-  const buildScene = () => {
-    stars.length = 0;
-    nodes.length = 0;
-    orbs.length = 0;
-
-    const starTotal = Math.round(clamp((width * height) / 18000, 70, 145));
-    const nodeTotal = Math.round(clamp((width * height) / 52000, 26, 54));
-
-    for (let i = 0; i < starTotal; i += 1) {
-      stars.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        size: Math.random() * 1.6 + 0.3,
-        alpha: Math.random() * 0.65 + 0.18,
-        twinkle: Math.random() * Math.PI * 2,
-        speed: Math.random() * 0.02 + 0.003,
-        driftX: (Math.random() - 0.5) * 0.04,
-        driftY: (Math.random() - 0.5) * 0.04
-      });
-    }
-
-    for (let i = 0; i < nodeTotal; i += 1) {
-      nodes.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.16,
-        vy: (Math.random() - 0.5) * 0.16,
-        r: Math.random() * 1.8 + 0.8
-      });
-    }
-
-    const palette = [
-      ['rgba(138,0,230,0.28)', 'rgba(138,0,230,0)'],
-      ['rgba(94,61,255,0.22)', 'rgba(94,61,255,0)'],
-      ['rgba(255,255,255,0.12)', 'rgba(255,255,255,0)']
-    ];
-
-    for (let i = 0; i < 4; i += 1) {
-      orbs.push({
-        baseX: Math.random() * width,
-        baseY: Math.random() * height,
-        radius: Math.max(width, height) * (0.16 + Math.random() * 0.12),
-        speed: 0.0005 + Math.random() * 0.0007,
-        offset: Math.random() * Math.PI * 2,
-        rangeX: 40 + Math.random() * 110,
-        rangeY: 30 + Math.random() * 90,
-        colors: palette[i % palette.length]
-      });
-    }
-  };
-
-  const onPointerMove = (event) => {
-    pointer.x = event.clientX / width;
-    pointer.y = event.clientY / height;
-  };
-
-  const drawBackdrop = (time) => {
-    const gradient = ctx.createRadialGradient(
-      width * (0.22 + pointer.x * 0.12),
-      height * (0.18 + pointer.y * 0.12),
-      0,
-      width * 0.5,
-      height * 0.5,
-      Math.max(width, height) * 0.85
-    );
-    gradient.addColorStop(0, 'rgba(34, 12, 68, 0.22)');
-    gradient.addColorStop(0.55, 'rgba(10, 7, 18, 0.08)');
-    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, width, height);
-
-    orbs.forEach((orb, index) => {
-      const x = orb.baseX + Math.sin(time * orb.speed + orb.offset) * orb.rangeX + (pointer.x - 0.5) * (12 + index * 3);
-      const y = orb.baseY + Math.cos(time * orb.speed * 1.2 + orb.offset) * orb.rangeY + (pointer.y - 0.5) * (10 + index * 2);
-      const g = ctx.createRadialGradient(x, y, 0, x, y, orb.radius);
-      g.addColorStop(0, orb.colors[0]);
-      g.addColorStop(1, orb.colors[1]);
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      ctx.arc(x, y, orb.radius, 0, Math.PI * 2);
-      ctx.fill();
+  resize();
+  window.addEventListener('resize', resize);
+  for (let i = 0; i < total; i += 1) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.22,
+      vy: (Math.random() - 0.5) * 0.22,
+      r: Math.random() * 1.6 + 0.7
     });
-  };
-
-  const drawStars = (time) => {
-    stars.forEach((star) => {
-      star.x += star.driftX;
-      star.y += star.driftY;
-      if (star.x < -4) star.x = width + 4;
-      if (star.x > width + 4) star.x = -4;
-      if (star.y < -4) star.y = height + 4;
-      if (star.y > height + 4) star.y = -4;
-      const glow = star.alpha + Math.sin(time * star.speed + star.twinkle) * 0.2;
+  }
+  const draw = () => {
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach((point, index) => {
+      point.x += point.vx;
+      point.y += point.vy;
+      if (point.x < -20) point.x = width + 20;
+      if (point.x > width + 20) point.x = -20;
+      if (point.y < -20) point.y = height + 20;
+      if (point.y > height + 20) point.y = -20;
       ctx.beginPath();
-      ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(232, 218, 255, ${Math.max(0.08, glow)})`;
+      ctx.arc(point.x, point.y, point.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(228, 207, 255, 0.68)';
       ctx.fill();
-    });
-  };
-
-  const drawNodeField = () => {
-    nodes.forEach((node, index) => {
-      node.x += node.vx;
-      node.y += node.vy;
-      if (node.x < -20) node.x = width + 20;
-      if (node.x > width + 20) node.x = -20;
-      if (node.y < -20) node.y = height + 20;
-      if (node.y > height + 20) node.y = -20;
-
-      ctx.beginPath();
-      ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(230, 210, 255, 0.58)';
-      ctx.fill();
-
-      for (let i = index + 1; i < nodes.length; i += 1) {
-        const other = nodes[i];
-        const dx = node.x - other.x;
-        const dy = node.y - other.y;
+      for (let i = index + 1; i < particles.length; i += 1) {
+        const other = particles[i];
+        const dx = point.x - other.x;
+        const dy = point.y - other.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < 140) {
+        if (distance < 126) {
           ctx.beginPath();
-          ctx.moveTo(node.x, node.y);
+          ctx.moveTo(point.x, point.y);
           ctx.lineTo(other.x, other.y);
-          ctx.strokeStyle = `rgba(138, 0, 230, ${0.13 * (1 - distance / 140)})`;
+          ctx.strokeStyle = `rgba(138, 0, 230, ${0.14 * (1 - distance / 126)})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
     });
+    requestAnimationFrame(draw);
   };
-
-  const drawScan = (time) => {
-    const y = (time * 0.05) % (height + 180) - 90;
-    const band = ctx.createLinearGradient(0, y - 55, 0, y + 55);
-    band.addColorStop(0, 'rgba(255,255,255,0)');
-    band.addColorStop(0.5, 'rgba(176,91,255,0.05)');
-    band.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.fillStyle = band;
-    ctx.fillRect(0, y - 55, width, 110);
-  };
-
-  const draw = (time = 0) => {
-    ctx.clearRect(0, 0, width, height);
-    drawBackdrop(time);
-    drawStars(time);
-    drawNodeField();
-    drawScan(time);
-    animationFrame = requestAnimationFrame(draw);
-  };
-
-  resize();
-  buildScene();
-  window.addEventListener('resize', () => {
-    resize();
-    buildScene();
-  });
-  window.addEventListener('pointermove', onPointerMove, { passive: true });
-  animationFrame = requestAnimationFrame(draw);
-
-  window.addEventListener('beforeunload', () => cancelAnimationFrame(animationFrame), { once: true });
+  draw();
 };
 
 document.addEventListener('DOMContentLoaded', () => {

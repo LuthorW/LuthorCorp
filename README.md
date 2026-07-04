@@ -1,25 +1,31 @@
-# Luthor Corporation — Original Cinemático v2
+# Luthor Corporation — Original Cinemático
 
-Nesta revisão, o foco foi manter o site enxuto e aprimorar principalmente o **visual cinematográfico**.
+Versão enxuta baseada no projeto original, com foco em aprimorar os projetos sem transformar o site em algo excessivamente explicativo.
 
-## O que foi melhorado
-- fundo com **mais animações** e sensação de profundidade
-- canvas mais rico, com:
-  - partículas conectadas
-  - estrelas com brilho variável
-  - glows/nebulosas em movimento
-  - faixa de luz/scan sutil
-  - leve reação ao movimento do mouse
-- grade de fundo com deslocamento suave
-- hero e cards com animação mais viva, sem exagerar no conteúdo
+## Melhorias aplicadas
 
-## Estrutura
-- `index.html` — página principal
-- `projects/` — páginas separadas de cada projeto
-- `style.css` — estilos e animações visuais
-- `script.js` — idioma, interações e canvas animado
+- visual mais cinematográfico com fundo em canvas animado
+- seção de projetos preservada como foco principal
+- páginas separadas para cada projeto:
+  - Artemis
+  - Athena
+  - Hera
+  - Demeter
+  - Nike
+  - Hecate
+- modo PT / EN / IT
+- menu mobile mantido
+- parcerias esportivas preservadas
+- estrutura simples, sem IA conversacional, newsroom ou seções extras
 
-## Idiomas
-- PT
-- EN
-- IT
+## Arquivos principais
+
+- `index.html` — página inicial
+- `style.css` — visual e responsividade
+- `script.js` — canvas, idioma, menu e renderização das páginas de projetos
+- `projects/` — páginas individuais dos projetos
+- `imgs/` — imagens e logos
+
+## Como abrir
+
+Abra o arquivo `index.html` no navegador.
